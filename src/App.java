@@ -1,4 +1,5 @@
 import openchat.Client;
+import openchat.data.ChatMessage;
 import openchat.CallOnConnect;
 import openchat.Chat;
 
@@ -11,6 +12,9 @@ class ChatApp {
             System.out.println("Connected to Server, can Start a chat now.");
             chat = client.getChatInstance();
             chat.send("hello", "nithi");
+            chat.send("2ns msg", "nithi");
+            ChatMessage msg = chat.receive();
+            System.out.println(msg.message);
         }
     }
 
